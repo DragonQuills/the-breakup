@@ -3,7 +3,7 @@
 ################################################################################
 
 define cas = Character("Casper", color = "#38b95f")
-define mc = Character("Jayne", image = "mc",  color = "#227cf1")
+define mc = Character("[name]", image = "mc",  color = "#227cf1")
 
 
 ################################################################################
@@ -43,6 +43,15 @@ image mc sad = im.FactorScale("images/mc/sad.png", 0.5)
 ################################################################################
 
 label start:
+    label setup:
+        show mc neutral
+        "You'll be playing this character."
+
+        python:
+            name = renpy.input("What should their name be?", default="Jayne")
+
+            name = name.strip()
+        
     scene bg living room:
         zoom 0.7
     show mc smile at right
