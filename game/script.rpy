@@ -43,6 +43,8 @@ image mc sad = im.FactorScale("images/mc/sad.png", 0.5)
 ################################################################################
 
 label start:
+    scene bg living room:
+        zoom 0.7
     show mc smile at right
     show cas sad at left
     mc "It'll be ok."
