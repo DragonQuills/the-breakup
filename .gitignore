@@ -5,6 +5,7 @@
 
 game/saves/*
 game/cache/*
+.vscode/*
 errors.txt
 log.txt
 traceback.txt
