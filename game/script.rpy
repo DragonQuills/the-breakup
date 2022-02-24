@@ -1,33 +1,49 @@
-﻿# The script of the game goes in this file.
+﻿################################################################################
+## Character Definitions
+################################################################################
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
+define cas = Character("Casper", color = "#38b95f")
+define mc = Character("Jayne", image = "mc",  color = "#227cf1")
 
 
-# The game starts here.
+################################################################################
+## Images
+################################################################################
+image cas neutral = im.FactorScale("images/casper/hoodie/neutral.png", 0.5)
+image cas smile = im.FactorScale("images/casper/hoodie/smile.png", 0.5)
+image cas laugh = im.FactorScale("images/casper/hoodie/laugh.png", 0.5)
+image cas grin = im.FactorScale("images/casper/hoodie/grin.png", 0.5)
+image cas smirk = im.FactorScale("images/casper/hoodie/smirk.png", 0.5)
+image cas angry = im.FactorScale("images/casper/hoodie/angry.png", 0.5)
+image cas annoyed = im.FactorScale("images/casper/hoodie/annoyed.png", 0.5)
+image cas grumpy = im.FactorScale("images/casper/hoodie/grumpy.png", 0.5)
+image cas shocked = im.FactorScale("images/casper/hoodie/suprised.png", 0.5)
+image cas blank  = im.FactorScale("images/casper/hoodie/blank.png", 0.5)
+image cas sad = im.FactorScale("images/casper/hoodie/sad.png", 0.5)
+image cas crying = im.FactorScale("images/casper/hoodie/crying.png", 0.5)
+image cas sad smile = im.FactorScale("images/casper/hoodie/sad-smile.png", 0.5)
+image cas crying smile = im.FactorScale("images/casper/hoodie/crying-smile.png", 0.5)
+
+image mc neutral = im.FactorScale("images/mc/neutral.png", 0.5)
+image mc smile = im.FactorScale("images/mc/smile.png", 0.5)
+image mc laugh = im.FactorScale("images/mc/laugh.png", 0.5)
+image mc grin = im.FactorScale("images/mc/grin.png", 0.5)
+image mc smirk = im.FactorScale("images/mc/smirk.png", 0.5)
+image mc angry = im.FactorScale("images/mc/angry.png", 0.5)
+image mc annoyed = im.FactorScale("images/mc/annoyed.png", 0.5)
+image mc grumpy = im.FactorScale("images/mc/grumpy.png", 0.5)
+image mc shocked = im.FactorScale("images/mc/suprised.png", 0.5)
+image mc blank  = im.FactorScale("images/mc/blank.png", 0.5)
+image mc sad smile = im.FactorScale("images/mc/sad-smile.png", 0.5)
+image mc sad = im.FactorScale("images/mc/sad.png", 0.5)
+
+
+################################################################################
+## Game
+################################################################################
 
 label start:
-
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
-
+    show mc smile at right
+    show cas sad at left
+    mc "It'll be ok."
     return
