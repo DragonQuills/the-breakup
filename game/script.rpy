@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Character Definitions
 ################################################################################
 
@@ -314,7 +314,7 @@ label start:
             
             show cas sad smile
             show mc sad
-            cas "Taylor's last relationship was really bad. {w}Like {i}really{\i} bad."
+            cas "Taylor's last relationship was really bad. {w}Like {i}really{/i} bad."
             cas "It's not my place to talk about what happened."
             cas "But because of it, Taylor's always been really insecure."
             cas "At first, I thought it was just a normal relationship thing. It wasn't like it was bad, he just wanted me to reassure him that I loved him pretty often."
@@ -387,6 +387,33 @@ label start:
         show mc neutral at left
         show cas neutral at right
         "We went into Casper's room together and sat down on the bed."
+        menu:
+            "Invite Casper to put his head on your lap.":
+                $ on_lap = True
+                show mc smile
+                "I tapped my legs with my hands."
+                mc "Do you want to rest your head on my legs?"
+                "Casper thought for a moment."
+                cas "Yeah. That would be really nice, actually."
+                "Casper curled up on his side and lay his head down on my lap, facing upwards."
+                "I stroked his hair gently."
+                show cas smile
+                cas "Thank you."
+            "Just sit together.":
+                $ on_lap = False
+        show mc sad
+        "After a long pause, I spoke."
+        show cas sad
+        mc "...Do you want to keep talking about what happened?"
+        "Casper gave a tentative nod."
+        cas "I think I should, yeah."
+
+        "Casper took a deep breath, held it for a moment, then let it out."
+        cas "Ok. I need to give you a little more background first, though."
+        "I nodded."
+        mc "I'm all ears."
+        cas "Ok. {w} Ok."
+
 
     "The End"
     return
