@@ -440,6 +440,50 @@ label start:
         mc "I'm all ears."
         cas "Ok. {w} Ok."
 
+        show cas blank
+        show mc blank
+        cas "Do you remember how, in health class during middle school, I covered my ears during the sex portions a lot?"
+        "I nodded. Casper had been very uncomfortable with anything related to sex. Even when the teacher had asked him not to, or the other kids teased him about it, he had continued covering his ears or putting headphones on when he got overwhelmed."
+        "I hadn't really understood why at the time, just that he was unhappy. I teased him about it the first day, but he burst into tears."
+        "After realizing just how upset it made him, I tried to cover for him when I could by joking around to distract the other kids or asking the teacher questions before she could say anything to Cas."
+        cas "Well, that feeling, being uncomfortable with sex? It never really went away."
+        show cas grumpy
+        cas "During high school when the other guys were talking about their. Ugh. {i}Conquests.{/i}"
+        cas "... I tried to play along, but it really sickened me. Not just hearing them talk about people like that, though that was a big part of it."
+        show cas sad
+        cas "But also the details really... freaked me out."
+        if on_lap:
+            show mc neutral
+            "I pet his hair and gave him a sympathetic smile."
+            show cas neutral
+            cas "Thanks."
+            "He nuzzled into my hand and I rubbed the start of a tear from the corner of his eye."
+        show cas smile
+        cas "I'm glad you never talked about that kind of thing with me."
+        show mc grin
+        mc "Pft, of course not. There are way more interesting things to talk about than sex-ploits, especially since neither of us were even in relationships. I'm sure at least two thirds of those guys were lying anyway."
+        cas "Yeah, probably."
+        "Thinking back to high school, I had never realized that Casper was uncomfortable with the sexual nature of the conversations the guys were having, and not just how awful they were to women."
+        "A suspicious started forming in my mind, but I kept it to myself for now. I could bring it up later."
+        
+        show cas blank
+        show mc blank
+        cas "So anyway, that brings us to more recently. I'm {i}still{/i} really uncomfortable with sex."
+        show cas sad smile
+        cas "I avoided having sex as long as I could with Taylor. I told him I wanted to take things slow but... I was really scared."
+        cas "I love kissing and cuddling and sometimes even making out, but that's where it ends for me."
+        "Cas started speaking faster, stumbling over his words."
+        if on_lap:
+            "I squeezed his shoulder gently and his pace slowed, just a bit."
+        cas "It took months for us to start kissing and even longer to start making out but... after that I starting making excuses."
+        show cas sad
+        cas "I was so scared to tell him that I... didn't want him when he clearly wanted me."
+        cas "So I told him I was too tired, or that I wasn't in the mood, or, or-"
+        show cas crying smile
+        cas "I even set up my phone to act like I was getting a call a few times. How ridiculous is that?"
+        "Cas' pace picks up more, a rapid patter of words building louder."
+        cas "I couldn't tell him! He would think it was about him and it's not about him, it's never been about him!"
+        cas "I just can't have sex!"
 
     "The End"
     return
