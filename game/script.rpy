@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Character Definitions
 ################################################################################
 
@@ -18,7 +18,7 @@ image cas smirk = im.FactorScale("images/casper/hoodie/smirk.png", 0.5)
 image cas angry = im.FactorScale("images/casper/hoodie/angry.png", 0.5)
 image cas annoyed = im.FactorScale("images/casper/hoodie/annoyed.png", 0.5)
 image cas grumpy = im.FactorScale("images/casper/hoodie/grumpy.png", 0.5)
-image cas suprised = im.FactorScale("images/casper/hoodie/suprised.png", 0.5)
+image cas surprised = im.FactorScale("images/casper/hoodie/surprised.png", 0.5)
 image cas blank  = im.FactorScale("images/casper/hoodie/blank.png", 0.5)
 image cas sad = im.FactorScale("images/casper/hoodie/sad.png", 0.5)
 image cas crying = im.FactorScale("images/casper/hoodie/crying.png", 0.5)
@@ -33,7 +33,7 @@ image mc smirk = im.FactorScale("images/mc/smirk.png", 0.5)
 image mc angry = im.FactorScale("images/mc/angry.png", 0.5)
 image mc annoyed = im.FactorScale("images/mc/annoyed.png", 0.5)
 image mc grumpy = im.FactorScale("images/mc/grumpy.png", 0.5)
-image mc suprised = im.FactorScale("images/mc/suprised.png", 0.5)
+image mc surprised = im.FactorScale("images/mc/surprised.png", 0.5)
 image mc blank  = im.FactorScale("images/mc/blank.png", 0.5)
 image mc sad smile = im.FactorScale("images/mc/sad-smile.png", 0.5)
 image mc sad = im.FactorScale("images/mc/sad.png", 0.5)
@@ -82,7 +82,7 @@ label start:
         "It was odd for him to be concealing something like this, but I figured he had his reasons."
         "I would just continue to do what I always had - check in, remind him I'm here, and give him space to working things out and tell me in his own time."
 
-        show mc suprised
+        show mc surprised
         "My ringtone startled me, as loud as it was in the quiet staircase."
         "I looked at the caller ID - Casper. This had to have been the first time he had called me in two or three months."
         "I hurriedly picked up and pressed the phone to my ear."
@@ -125,7 +125,7 @@ label start:
         cas "Thanks. Really, thank you, I know I-"
         
         show mc neutral
-        mc "It's ok. Don't worry about anyhting but yourself right now. I'll be over as soon as I can get there."
+        mc "It's ok. Don't worry about anything but yourself right now. I'll be over as soon as I can get there."
         show mc sad
         mc "Do you want to stay on the line while I drive?"
         cas "No, that's... that's ok. Focus on driving. I'll be fine until you get here, I'll just, sit here or something."
@@ -138,7 +138,7 @@ label start:
         if not know_broke_up:
             "I didn't know what was happening but that wasn't important right now."
         "I needed to get to Casper as soon as I could. I trusted him when he said he would be ok until I arrived, but my heart still ached at how raw his voice was."
-        "I drove as fast as I could safely go. Casper's apartment was 40 minutes away normally, but the lack of cars on the road plus gratuidous speeding meant I made the trip in 30."
+        "I drove as fast as I could safely go. Casper's apartment was 40 minutes away normally, but the lack of cars on the road plus gratuitous speeding meant I made the trip in 30."
 
         scene bg outside apt
         "When I arrived at Casper's apartment complex, I took the stairs two at a time. I knew the way to his apartment better than the way to my parent's house at this point, so the complex was easy to navigate despite the dark."
@@ -164,7 +164,7 @@ label start:
         label msg:
             "I shot off a quick text to Casper."
             phone "I'm outside."
-            "My phone imediatly chimed back."
+            "My phone immediately chimed back."
             phone "brt"
             jump in_the_apartment
 
