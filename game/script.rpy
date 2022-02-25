@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Character Definitions
 ################################################################################
 
@@ -55,9 +55,10 @@ label start:
     label warnings:
         hide mc
         
+        "This game contains themes of aphobia and toxic relationships, but the game has a happy ending. It's kind of a rough read though, not gonna lie."
+        "It has a lot of grief processing, but your character is there to help."
         $ show_warnings = True
         while show_warnings:
-            "This game contains themes of aphobia and toxic relationships, but the game has a happy ending."
             menu: 
                 "Would you like any more details on either of those? Details include spoilers."
                 "Aphobia":
@@ -77,6 +78,7 @@ label start:
         "Another thing to note - this game is not a dating sim and there is no way to romance Casper."
         "You will have opportunities to physically comfort Casper by hugging him, holding his hand, and so on."
         "These will not be framed as or taken as romantic advances, but rather as platonic shows of affection."
+        "Finally, the main character's pronouns are not asked because the main character is not referred to in the third person at any point, since the game is almost exclusively two characters interacting one-on-one."
         "Thanks, and have fun!"
 
     label intro:
