@@ -485,5 +485,63 @@ label start:
         cas "I couldn't tell him! He would think it was about him and it's not about him, it's never been about him!"
         cas "I just can't have sex!"
 
+        show cas crying
+        cas "He wanted to have sex tonight and I was tired of dancing around it and pretending, so I didn't make an excuse. I just told him no."
+        cas "And that really upset Taylor. He... really lost his head."
+        "Cas sniffled."
+        cas "He. He accused me of sleeping with someone else."
+        show mc angry
+        "Before I fully thought it through, I blurted out-"
+        mc "That's ridiculous! Cas, you've never cheated on anything in your life! You barely even lie!"
+        show cas sad smile
+        cas "I know. But Taylor didn't believe me."
+        show cas crying
+        show mc sad
+        cas "He told me that I must be sleeping with someone else on the side, that it was why I wasn't ever interested in sex with him."
+        cas "I started blurting things out, I tried to explain that it wasn't about him but he just, he was too upset to listen."
+        "Cas stared directly at me."
+        cas "I need you to understand, I don't think he truly meant what he said. He was just hurt, and I should have been more careful..."
+        cas "His eyes, and, and his posture..."
+        show cas crying smile
+        "Cas gave a joyless smile."
+        cas "He was panicking so badly. I think he might have even started having a panic attack after a bit."
+
+        menu:
+            "\"This isn't your fault.\"":
+                pass
+            "\"He shouldn't have treated you like that.\"":
+                pass
+            "Cas didn't even seem to hear me."
+        show cas crying
+        cas "Why... why couldn't I just have had sex with him?"
+        show cas angry
+        cas "God dammit!"
+        "Cas balled up his hands and pressed them to his forehead."
+        cas "Why can't I just be normal?"
+        show cas crying
+        
+        if on_lap:
+            "I reached out and gently unballed one hand. It was shaking."
+            "He wrapped his fingers around mine like a lifeline, squeezing so hard it hurt."
+        "Casper was fully crying at this point, sobs shaking his body."
+
+        cas "Why can't I be normal?"
+        cas "Why do I have to be some... some freak who can't have sex with his partner!"
+        cas "I love him so much but I just couldn't-"
+        "He gasped out another sob."
+        show cas crying smile
+        cas "Not even for Taylor, I just couldn't..."
+
+        menu:
+            "Tell Casper you think he might be ace.":
+                $ still_crying = True
+                "It might not be the right time, and maybe it wouldn't land, but he had to know that he wasn't a freak."
+                jump ur_ace_bro
+            "Try to help him calm down first.":
+                $ still_crying = False
+                pass
+        
+    label ur_ace_bro:
+        pass
     "The End"
     return
