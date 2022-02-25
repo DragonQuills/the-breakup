@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Character Definitions
 ################################################################################
 
@@ -260,6 +260,133 @@ label start:
             
             show cas sad smile
             cas "It's... it's probably for the best."
+            "Cas had been so excited when he and Taylor had started dating. Taylor was his first boyfriend, and Cas was head-over-heels for him."
+            "I didn't know much about Taylor. I had only met him a handful of times, always in passing. He seemed nice enough."
+            "I just nodded at Cas. I didn't really feel like I knew enough about their relationship to comment."
+            
+            show cas sad
+            cas "Things... things have been rough with us for a while now."
+            cas "More fighting, more uncomfortable quiet, more nights going to sleep hurt or angry."
+            cas "I... didn't want to tell you about it. I didn't want you to think badly of him, or of me."
+
+            "Cas meets my eyes with intensity."
+            show cas grumpy
+            cas "He's... he's not a bad person. He's just been through a lot and sometimes... I think sometimes it just gets to be too much for him and he lashes out."
+            cas "Or I do or say the wrong thing and he just goes cold."
+            show cas sad
+            cas "He's never been awful to me, or anything like that. Just, sometimes he gets..."
+            "Cas' voice gets so small I have to lean in to hear it."
+            cas "Sometimes he's just, kind of... mean."
+            "Cas' body started shaking."
+
+            menu:
+                "Hug him":
+                    "I wrapped my arms around Cas and squeezed tightly."
+                    "He gave a little squeeze back and rested his head on my shoulder."
+                    cas "Thanks..."
+                    "Cas pulled back from me after a few moments."
+                "Get him some water.":
+                    show mc neutral
+                    mc "One sec."
+                    "I grabbed a cup of water from the kitchen and handed it to Cas."
+                    cas "Thanks."
+                    "Cas took a few small sips."
+            
+            cas "I... I think I want to keep talking about this."
+            cas "I didn't tell you or anyone else about any of this but I think I need to."
+            cas "I think I should have talked about it earlier. Maybe..."
+            "Another breath. Tears well up in his eyes."
+            show cas crying smile
+            cas "Maybe things would have gone differently tonight if I had."
+            
+            menu:
+                "Hold his hand":
+                    "I reached out and took Casper's hand, giving it a firm squeeze."
+                    show mc sad smile
+                    mc "Talk about whatever you need to. I'll listen."
+                    show cas sad smile
+                    "Cas wraps his fingers around mine."
+                    cas "Ok. Thank you."
+                    $ holding_hands = True
+                "Stay quiet":
+                    "I give a small nod to show I'm listening."
+                    $ holding_hands = False
+            
+            show cas sad smile
+            show mc sad
+            cas "Taylor's last relationship was really bad. {w}Like {i}really{\i} bad."
+            cas "It's not my place to talk about what happened."
+            cas "But because of it, Taylor's always been really insecure."
+            cas "At first, I thought it was just a normal relationship thing. It wasn't like it was bad, he just wanted me to reassure him that I loved him pretty often."
+            cas "And I was happy to remind him that because of course I care about him, and I want him to know it."
+            show cas sad
+            cas "But... It didn't get better. It got worse as time went on."
+            cas "He started getting really scared when I didn't see him for a while, especially if I was hanging out with someone else."
+            cas "I always told him that it was fine and I made as much time as I could but... it wasn't enough."
+            cas "That was part of why I've been so bad about responding to you."
+            cas "I just didn't want to stress him out, and I knew that he worried about it when I saw you so I just sort of... stopped responding."
+            "Cas swallows hard."
+            show cas crying smile
+            cas "It. It sounds so bad when I say it like that, huh?"
+            cas "He never asked me to avoid you or anything like that I just didn't want to hurt him. But I guess I did anyway, huh?"
+            if holding_hands:
+                "I gave Casper's hand what I hoped was a comforting squeeze, and he squeezed back."
+            show cas sad
+            cas "I... I haven't been the nicest person to him recently."
+            show cas grumpy
+            "Casper's voice rose."
+            cas "It, it just got so frustrating!"
+            cas "I kept telling him I cared and that I only had eyes for him but he just wouldn't believe me."
+            cas "And he kept questioning who I was with and where I went."
+            "His voice returned to a whisper."
+            show cas sad
+            cas "I know he was just scared, but I just got so tired of having to constantly explain myself and walk on eggshells around him."
+            cas "And I barely had time or energy for anything else. I haven't gone running in almost a month. I've barely even cooked recently."
+            cas "So I guess I started getting short with him, and took longer and longer to text him back. But of course that just made everything worse."
+            cas "Tonight everything just... all came to a head."
+            
+            show cas crying
+            "Cas let out a sob."
+            cas "I... I need a second."
+            mc "We don't have to keep talk-"
+            "Cas shook his head firmly."
+            cas "No, I, I need to talk about this. But I just. {w}I can't deal with it right now. {w}I need to pull myself back together."
+            
+            mc "I understand."
+            
+            menu:
+                "Do you want to go for a walk?":
+                    show cas sad smile
+                    cas "In the middle of the night?"
+                    show mc grin
+                    mc "Sure, why not?"
+                    "I tried cracking a joke to see how it would land."
+                    mc "I'm pretty sure the two of us could take down..."
+                    "I looked Casper up and down."
+                    mc "Like at least 3 and a half bears."
+                    show cas laugh
+                    "That was absurd enough to startle a laugh out of Casper."
+                    cas "Haha!"
+                    show cas neutral
+                    cas "A walk sounds good."
+                    jump walk
+                "Do you want to watch a show?":
+                    jump tv
+    # TODO: Add more conversation about your relationship with Casper, or his relationship with Taylor here.
+    label walk:
+        "We went for a walk until Casper calmed back down."
+        jump resume_talk
+    label tv:
+        "We watched a few TV shows until Casper calmed down."
+        jump resume_talk
+
+    
+    label resume_talk:
+        scene bg bedroom:
+            zoom 0.8
+        show mc neutral at left
+        show cas neutral at right
+        "We went into Casper's room together and sat down on the bed."
 
     "The End"
     return
