@@ -11,7 +11,7 @@ define phone = Character("Text",  color = "#994f4f")
 ## Images
 ################################################################################
 image cas neutral = im.FactorScale("images/casper/hoodie/neutral.png", 0.5)
-image cas smile = im.FactorScale("images/casper/hoodie/smile.png", 0.5)
+image cas smile = im.FactorScale("images/casper/hoodie/happy.png", 0.5)
 image cas laugh = im.FactorScale("images/casper/hoodie/laugh.png", 0.5)
 image cas grin = im.FactorScale("images/casper/hoodie/grin.png", 0.5)
 image cas smirk = im.FactorScale("images/casper/hoodie/smirk.png", 0.5)
@@ -80,7 +80,7 @@ label start:
         "If something felt off to me, I trusted that there really was something wrong."
         "But every time I asked, Casper brushed me off and told me he was fine. He always gave some excuse - I'm just tired, I forgot to eat breakfast, work was hard today. But I knew there was something deeper going on."
         "It was odd for him to be concealing something like this, but I figured he had his reasons."
-        "I would just continue to do what I always had - check in, remind him I'm here, and give him space to working things out and tell me in his own time."
+        "I would just continue to do what I always had - check in, remind him I'm here, and give him space to work things out and tell me in his own time."
 
         show mc surprised
         "My ringtone startled me, as loud as it was in the quiet staircase."
@@ -177,6 +177,89 @@ label start:
     label in_the_apartment:
         scene bg doorway dark
         show cas sad smile
+        with Dissolve(1)
+        cas "Hey. Thank you for coming."
+        mc "Of course."
+        
+        "Cas reached behind himself and flipped a light switch."
+        scene bg doorway
+        show cas sad smile
+        cas "Heh. I guess I didn't realize how dark it had gotten."
+
+        show cas neutral at right
+        show mc neutral at left
+        with moveinleft
+        cas "C'mon in."
+
+        "We stepped inside and I followed Casper to his living room."
+
+        show bg living room with Dissolve(1)
+        show cas blank
+        "Cas sat down on the couch and curled his knees up to his chest."
+        show cas neutral
+        cas "Seriously, thank you so much for coming over."
+        show cas sad smile
+        cas "I... I haven't been a very good friend lately and it really means a lot to me that you came. I just- "
+
+        menu:
+            "Let him say what's on his mind":
+                jump cas_apology
+            "Tell him not to worry about it":
+                jump dw_fam
+        
+        label cas_apology:
+            show cas sad
+            show mc blank
+            cas "I haven't been very responsive lately and I know I've been spacey when we hang out."
+            cas "I just... there's been a lot going on but I didn't know how to tell you about any of it and..."
+            show cas sad smile
+            cas "...And I was worried you would ask questions I didn't want to think about the answers to."
+            show cas sad
+            cas "But I still shouldn't have dodged your calls or avoided you like I have been, and I'm sorry."
+            cas "Thank you for coming over despite that."
+
+            menu:
+                "\"Thank you for apologizing.\"":
+                    show mc smile
+                    mc "Thank you for the apology."
+                    mc "I was a bit hurt that you we ghosting me like that, but I also figured there had to be a reason."
+                    mc "I'm glad you reached out tonight and I'm here now."
+                    jump sitting
+                "\"It's ok.\"":
+                    show mc smile
+                    mc "Don't even worry about it at all. I didn't take it personally, I just figured you had some stuff you were dealing with and that you would tell me about it when you were ready."
+                    show cas sad
+                    cas "But..."
+                    mc "Cas, I've known you for over a decade. I know you didn't mean any harm and I'm not mad."
+                    show cas neutral
+                    cas "Ok. Thank you."
+                    jump sitting
+        
+        label dw_fam:
+            show mc smile
+            show cas sad
+            mc "Don't worry about that at all right now."
+            cas "But..."
+            mc "We can talk about it later if you really want to, but right now my first priority is helping you."
+            show cas neutral
+            cas "Ok. Thank you."
+
+        label sitting:
+            show mc sad
+            show cas sad
+            mc "Are you ok with telling me what happened?"
+            "Cas gives a small nod."
+            if know_broke_up:
+                cas "Uh, I guess I already told you Taylor broke up with me."
+            if not know_broke_up:
+                show mc sad
+                cas "Uh. Yeah, I guess the first think you should know is Taylor broke up with me."
+                cas "He left a little before I called you."
+                "Cas lets out a deep, shuddering breath."
+                mc "Oh... Oh Cas, I'm so sorry."
+            
+            show cas sad smile
+            cas "It's... it's probably for the best."
 
     "The End"
     return
