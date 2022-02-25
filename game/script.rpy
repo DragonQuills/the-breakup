@@ -53,7 +53,31 @@ label start:
 
             name = name.strip()
     label warnings:
-        # Add content warnings here.
+        hide mc
+        
+        $ show_warnings = True
+        while show_warnings:
+            "This game contains themes of aphobia and toxic relationships, but the game has a happy ending."
+            menu: 
+                "Would you like any more details on either of those? Details include spoilers."
+                "Aphobia":
+                    "The main character's best friend, Casper just went through a break up with his boyfriend Taylor."
+                    "There were many factors at play, but the final thing that caused the breakup was Casper admitting he did not want to have sex, and Taylor being upset by that."
+                    "Casper is not aware he is asexual at the start of the game, so there is also a lot of internalized aphobia, such as him asking the main character why he can't just 'be normal.'"
+                    "Over the course of the game, Casper learns what asexuality is and begins to realize that there is nothing wrong with him."
+                "Toxic relationship":
+                    "The main character's best friend, Casper just went through a break up. Casper and his ex, Taylor, were both not good for each other."
+                    "Taylor was jealous and suspicious, and very codependent. Casper was bitter and short tempered due to his frustration with Taylor's behavior."
+                    "There was not physical, sexual, or verbal abuse, but there were some elements of emotional manipulation."
+                    "By the beginning of the game, the relationship has already ended and Casper is dealing with his emotions around it."
+                    "Casper will not resume his relationship with Taylor, however you have a role in deciding if he stays in contact with Taylor."
+                "Nah, I'm good.":
+                    $ show_warnings = False
+        "Please remember to take care of yourself. Take breaks or stop playing if you need to!"
+        "Another thing to note - this game is not a dating sim and there is no way to romance Casper."
+        "You will have opportunities to physically comfort Casper by hugging him, holding his hand, and so on."
+        "These will not be framed as or taken as romantic advances, but rather as platonic shows of affection."
+        "Thanks, and have fun!"
 
     label intro:
         scene bg stairs:
