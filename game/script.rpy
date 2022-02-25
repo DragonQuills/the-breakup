@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Character Definitions
 ################################################################################
 
@@ -250,7 +250,7 @@ label start:
                     mc "Thank you for the apology."
                     mc "I was a bit hurt that you we ghosting me like that, but I also figured there had to be a reason."
                     mc "I'm glad you reached out tonight and I'm here now."
-                    jump sitting
+                    jump couch_time
                 "\"It's ok.\"":
                     show mc smile
                     mc "Don't even worry about it at all. I didn't take it personally, I just figured you had some stuff you were dealing with and that you would tell me about it when you were ready."
@@ -259,7 +259,7 @@ label start:
                     mc "Cas, I've known you for over a decade. I know you didn't mean any harm and I'm not mad."
                     show cas neutral
                     cas "Ok. Thank you."
-                    jump sitting
+                    jump couch_time
         
         label dw_fam:
             show mc smile
@@ -270,7 +270,7 @@ label start:
             show cas neutral
             cas "Ok. Thank you."
 
-        label sitting:
+        label couch_time:
             show mc sad
             show cas sad
             mc "Are you ok with telling me what happened?"
@@ -295,15 +295,15 @@ label start:
             cas "More fighting, more uncomfortable quiet, more nights going to sleep hurt or angry."
             cas "I... didn't want to tell you about it. I didn't want you to think badly of him, or of me."
 
-            "Cas meets my eyes with intensity."
+            "Cas met my eyes with intensity."
             show cas grumpy
             cas "He's... he's not a bad person. He's just been through a lot and sometimes... I think sometimes it just gets to be too much for him and he lashes out."
-            cas "Or I do or say the wrong thing and he just goes cold."
             show cas sad
+            cas "Or I do or say the wrong thing and he just goes cold."
             cas "He's never been awful to me, or anything like that. Just, sometimes he gets..."
-            "Cas' voice gets so small I have to lean in to hear it."
+            "Cas's voice gets so small I have to lean in to hear it."
             cas "Sometimes he's just, kind of... mean."
-            "Cas' body started shaking."
+            "Cas's body started shaking."
 
             menu:
                 "Hug him":
@@ -464,7 +464,7 @@ label start:
         mc "Pft, of course not. There are way more interesting things to talk about than sex-ploits, especially since neither of us were even in relationships. I'm sure at least two thirds of those guys were lying anyway."
         cas "Yeah, probably."
         "Thinking back to high school, I had never realized that Casper was uncomfortable with the sexual nature of the conversations the guys were having, and not just how awful they were to women."
-        "A suspicious started forming in my mind, but I kept it to myself for now. I could bring it up later."
+        "A suspicion started forming in my mind, but I kept it to myself for now. I could bring it up later."
         
         show cas blank
         show mc blank
@@ -481,7 +481,7 @@ label start:
         cas "So I told him I was too tired, or that I wasn't in the mood, or, or-"
         show cas crying smile
         cas "I even set up my phone to act like I was getting a call a few times. How ridiculous is that?"
-        "Cas' pace picks up more, a rapid patter of words building louder."
+        "Cas's pace picked up more, a rapid patter of words building louder."
         cas "I couldn't tell him! He would think it was about him and it's not about him, it's never been about him!"
         cas "I just can't have sex!"
 
@@ -511,7 +511,8 @@ label start:
                 pass
             "\"He shouldn't have treated you like that.\"":
                 pass
-            "Cas didn't even seem to hear me."
+
+        "Cas didn't even seem to hear me."
         show cas crying
         cas "Why... why couldn't I just have had sex with him?"
         show cas angry
@@ -529,19 +530,145 @@ label start:
         cas "Why do I have to be some... some freak who can't have sex with his partner!"
         cas "I love him so much but I just couldn't-"
         "He gasped out another sob."
-        show cas crying smile
         cas "Not even for Taylor, I just couldn't..."
 
         menu:
             "Tell Casper you think he might be ace.":
                 $ still_crying = True
                 "It might not be the right time, and maybe it wouldn't land, but he had to know that he wasn't a freak."
-                jump ur_ace_bro
             "Try to help him calm down first.":
                 $ still_crying = False
-                pass
+        
+        show mc sad smile
+        "I spoke softly but firmly."
+        mc "Hey."
+        "Cas didn't respond. He wasn't even looking at me."
+        "I tried again, a little louder."
+        mc "Hey. Casper, hey, look at me."
+        show cas crying
+        "This time Cas startled slightly, then looked at me. His eyes were glassy and distant."
+        show mc neutral
+        "I spoke slowly, making eye contact."
+        if still_crying:
+            jump ur_ace_bro
+        mc "Casper. I'm glad you're processing this but I think we need to bring you back down a little."
+        mc "Ok?"
+        "Casper shook and let out a stuttering breath."
+        cas "O-ok."
+        show mc smile
+        "I started on a grounding technique Casper had told me about. He had learned it from a therapist shortly after his Dad died."
+        mc "Can you tell me five things you can see?"
+        "Casper's eyes flitted rapidly from spot to spot, not quite focusing."
+        cas "T-there's, uh, you next to me."
+        mc "Yep. What else."
+        cas "And there's the w-window over there. And my plant by the door."
+        "I nodded."
+        mc "Mhm. That's three."
+        cas "M-my desk too. And there's the book I was reading on it."
+        show cas sad
+        "As he spoke, Casper's breaths were slowing and his shaking was subsiding slightly."
+        show mc grin
+        mc "Good job, you're doing great."
+        show mc neutral
+        mc "Can you list four things you can hear."
+        cas "Yeah. There's the air conditioner running. And I think I can hear a car going by outside."
+
+        "We continued this way, naming things Cas could see, hear, feel, smell, and taste until his breath had come back to normal."
+        if on_lap:
+            "The whole time, I ran my fingers through his hair, hoping to provide some comfort."
+        "Eventually, after Cas had calmed back down, I decided to broach the topic of his sex aversion."
         
     label ur_ace_bro:
-        pass
+        # TODO: add the otehr term here
+        show mc neutral
+        mc "Have you heard the term asexual?"
+        if still_crying:
+            "Cas startled a little and looked confused. He blinked several times as his eyes strained to focus."
+        else:
+            show cas blank
+        cas "Asexual's where... it's where someone doesn't want to date anyone, right?"
+        "I shook my head."
+        mc "You're thinking of aromantic. People get them mixed up or conflate them a lot."
+        
+        if still_crying:
+            "Cas continued to look at me, his shakes slowing a bit as he tried to focus on my words."
+        "I paused for a moment, trying to work out exactly how to say what I meant to."
+        mc "Asexual, in the most simple terms, means someone who doesn't feel sexual attraction."
+        mc "There's a spectrum of course, but right now we don't need to go into that."
+        mc "What's important is that some asexual people are also sex-repulsed, which means they're disgusted or uncomfortable with the idea of having sex with someone."
+        "I paused again as Cas stared up at me, understanding not quite dawning on him yet."
+        mc "I think that there's a pretty go chance that you're asexual, and it sounds like you're sex-repulsed too."
+        
+        if still_crying:
+            "Casper sniffed hard and wiped his eyes."
+
+        cas "There's... there's a word for that kind of thing?"
+        "I nodded several time firmly."
+        mc "Yeah, and there are a lot of other people who feel like you've been describing."
+        show cas surprised
+        "Cas's eyes widened."
+        cas "What does that mean...?"
+        show mc sad
+        "My chest felt heavy thinking about how long Cas must have been carrying his feelings without telling me or anyone else. I spoke with fervor, desperately needing my words to get through to him."
+        mc "Cas, it means there's nothing wrong with you. You're not a freak, you're not broken. There are hundred of thousands of people who feel this way and there's nothing wrong with it."
+        show cas blank
+        "I could see him turning it over in his mind."
+        show cas sad
+        cas "I... I'm not broken?"
+        if on_lap:
+            "I clutched Cas's shoulder tightly."
+        else:
+            "I shook my head."
+        mc "No, of course you're not."
+        cas "I... I think I need a second to think about all this."
+
+        show cas blank
+        cas "... You promise you're not just making this up or something?"
+        show mc surprised
+        mc "No! I would never!"
+        "Cas nodded quickly."
+        show cas sad
+        cas "Yeah, sorry, of course you wouldn't."
+        show cas sad smile
+        show mc sad
+        cas "I'm just gonna... Think for a bit, ok?"
+        menu:
+            "Offer to get some food and give Cas some space.":
+                jump get_food
+            "Offer to sit with him while he thinks.":
+                mc "Do you want me to sit here with you for a bit?"
+                "Cas shrugged."
+                cas "Ok. I'm just going to be in my own head for a while though. Might do a little reading about asexual people on my phone."
+                jump sit_with_cas
+                
+
+        label get_food:
+            mc "I could order us some take-out if you want a little space."
+            cas "That... would actually be great. Geez, what time even is it?"
+            "I checked the clock."
+            show mc sad smile
+            mc "It's a little after three AM."
+            cas "Oof. I don't think I've eaten since this time in the afternoon."
+            mc "Oof indeed. Pizza?"
+            show cas neutral
+            cas "Pizza sounds good."
+            scene black with Dissolve(1)
+            # TODO: flesh this out with MC getting some pizza and thinking about signs casper was ace or smtg
+            "I drove out to get us a pizza, then came back."
+            jump dang_im_ace
+
+        label sit_with_cas:
+            scene black with Dissolve(1)
+            "I sat beside Casper as he read articles by and above ace folks."
+            "I could see the gears turning in his head, but I stayed quiet and waited for him to be ready to talk again."
+            # TODO: flesh this out with Casper reading stuff and quietly talking
+            "After an hour or so, I hopped up to use the bathroom."
+            jump dang_im_ace
+    
+    label dang_im_ace:
+        scene bg bedroom dark with Dissolve(1):
+            zoom 0.7
+
+            
     "The End"
     return
