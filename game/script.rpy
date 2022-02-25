@@ -131,4 +131,52 @@ label start:
         cas "No, that's... that's ok. Focus on driving. I'll be fine until you get here, I'll just, sit here or something."
         mc "Ok. I'll drive carefully, but I'll be there really soon. Hang in there."
     
+    label approaching:    
+        scene black
+        hide mc
+        "I rushed down the stairs and into my car, all of my earlier tiredness washed away by adrenaline."
+        if not know_broke_up:
+            "I didn't know what was happening but that wasn't important right now."
+        "I needed to get to Casper as soon as I could. I trusted him when he said he would be ok until I arrived, but my heart still ached at how raw his voice was."
+        "I drove as fast as I could safely go. Casper's apartment was 40 minutes away normally, but the lack of cars on the road plus gratuidous speeding meant I made the trip in 30."
+
+        scene bg outside apt
+        "When I arrived at Casper's apartment complex, I took the stairs two at a time. I knew the way to his apartment better than the way to my parent's house at this point, so the complex was easy to navigate despite the dark."
+        show mc sad
+        "I flew to his door, then slowed in front of it."
+        menu:
+            "Knock on the door.":
+                jump knock
+            "Text Casper that you're outside.":
+                jump msg
+            "Call out to Casper.":
+                jump called
+        
+        label knock:
+            "I rapped quietly on the door, then waited for Casper to let me in."
+            "I didn't hear anything from inside the apartment."
+            "My phone chimed Casper's text tone."
+            phone "is thta you ousdid"
+            "I messaged back right away."
+            phone "Yeah, it's me."
+            jump in_the_apartment
+
+        label msg:
+            "I shot off a quick text to Casper."
+            phone "I'm outside."
+            "My phone imediatly chimed back."
+            phone "brt"
+            jump in_the_apartment
+
+        label called:
+            "I called out, loud enough that my voice would carry but hopefully quiet enough the neighbors wouldn't complain."
+            mc "Casper? It's [name]. I'm out front."
+            "I heard shuffling sounds from inside the apartment."
+            jump in_the_apartment
+
+    label in_the_apartment:
+        scene bg doorway dark
+        show cas sad smile
+
+    "The End"
     return
