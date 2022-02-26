@@ -499,6 +499,7 @@ label start:
         show mc sad
         cas "He told me that I must be sleeping with someone else on the side, that it was why I wasn't ever interested in sex with him."
         cas "I started blurting things out, I tried to explain that it wasn't about him but he just, he was too upset to listen."
+        cas "He told me that he couldn't be with me, not when I made him feel so unwanted and scared and then he just... left."
         "Cas stared directly at me."
         cas "I need you to understand, I don't think he truly meant what he said. He was just hurt, and I should have been more careful..."
         cas "His eyes, and, and his posture..."
@@ -579,7 +580,7 @@ label start:
         "Eventually, after Cas had calmed back down, I decided to broach the topic of his sex aversion."
         
     label ur_ace_bro:
-        # TODO: add the otehr term here
+        # TODO: add the other term here
         show mc neutral
         mc "Have you heard the term asexual?"
         if still_crying:
@@ -659,7 +660,7 @@ label start:
 
         label sit_with_cas:
             scene black with Dissolve(1)
-            "I sat beside Casper as he read articles by and above ace folks."
+            "I sat beside Casper as he read articles by and about ace folks."
             "I could see the gears turning in his head, but I stayed quiet and waited for him to be ready to talk again."
             # TODO: flesh this out with Casper reading stuff and quietly talking
             "After an hour or so, I hopped up to use the bathroom."
@@ -668,7 +669,116 @@ label start:
     label dang_im_ace:
         scene bg bedroom dark with Dissolve(1):
             zoom 0.7
+        show cas blank at right
+        show mc neutral at left
+        "When I came back into the room, it was dark. Casper must have turned the lights off while I was away."
+        "He sat still on the bed, the light from his phone illuminating his face."
+        mc "Hey, I'm back."
+        show cas smile
+        "Casper looked up at me and set his phone next to him."
+        cas "Hey."
+        mc "How are you feeling?"
+        "Cas looked pensive."
+        cas "I think I'm a little better. I did a lot of reading and a lot of thinking and..."
+        show cas sad smile
+        cas "I think you're probably right. Everything I read about asexuality feels like it fits. It feels weird that I never learned about it."
+        cas "But it just makes a lot of things make sense and... feel valid, I guess."
+        show mc smile
+        mc "I'm really glad. I hoped it would."
+        # TODO: Maybe add some more deets here?
+        show cas sad
+        cas "Although... something else happened while you were out of the room."
+        show mc sad
+        "Uh oh."
+        mc "What happened?"
+        "Cas hesitated for a long moment before extending his arm and offering his phone to me."
+        cas "Taylor texted me. Just read the last few messages."
+        "I took the phone and glanced over the messages, sitting down beside Cas as I did."
+        phone "I'm so sorry, babe. I should never have said that. You just make me so scared and insecure sometimes. Are we ok? Please please please say yes."
+        show cas blank
+        "Casper watched me, gauging my reaction."
+        menu:
+            "I felt..."
+            "Angry that he was blaming Casper.":
+                show mc angry
+                "What kind of apology was that?"
+                "The text read like Taylor thought that his yelling at Casper was Casper's fault."
+                "It wasn't fair of him to message Casper just a few hours after breaking their relationship off just to get Casper back!"
+            "Astonished that he was trying to brush this off.":
+                show mc surprised
+                "The text was just so weird. It was a backhanded apology, an accusation, and emotional manipulation all in one."
+                "How could he have yelled at Casper like that, walked out, and then texted only a few hours later hoping things were fine?"
+            "Honestly, I felt kind of bad for him.":
+                show mc sad
+                "Taylor clearly had a lot of fear around losing Casper, and he was dealing with it in the worse ways."
+                "From what Casper had said, Taylor seemed like he really needed help, and I hoped he got it, ideally from a therapist and not a romantic partner."
+                "But it absolutely didn't make how he was treating Casper ok, and this text had a manipulative feeling to it that made me very uncomfortable."
+        
+        cas "Does... does the text feel kind of weird to you too...?"
+        show mc blank
+        mc "Yeah. It does."
+        mc "It feels manipulative, and like he's blaming you for what happened."
 
-            
+        show cas sad
+        "Cas gave terse nod."
+        cas "I thought so too. I just... didn't know if that was me being defensive."
+
+        menu:
+            "\"It's not.\"":
+                mc "No, I think that's a really reasonable conclusion to draw from that text."
+            "\"You're allowed to be defensive right now.\"":
+                mc "Cas, Taylor hurt you really badly tonight. It's ok to be defensive, especially since you're not trying to get back at him. You're just processing."
+        
+        "Cas sighed heavily."
+        cas "I just... don't know where to go from here."
+        cas "It would be so, so easy just for me to tell him that everything is ok and try to get things to go back to normal."
+        show cas crying
+        show mc sad
+        "Cas's eyes started to well up again."
+        cas "But it's not. It's not ok and I don't think we've been ok for months now."
+
+        menu:
+            "Nod.":
+                $ hugs = False
+                "I bobbed my head and listened attentively."
+            "Put your arm around him.":
+                $ hugs = True
+                "I wrapped my arm around Cas's shoulder and pulled him against my side."
+                "He leaned into me and nuzzled into my shoulder."
+        
+        cas "I... I don't think this is healthy. Not for him and not for me either."
+        show cas crying smile
+        "Tears were falling from Casper's eyes again, but it was different from before."
+        "He felt less panicky and he wasn't blaming himself. He was crying, but he wasn't sobbing or shaking."
+        "There was a sense of melancholy resignation to his words."
+        "He breathed a few times, slowly, preparing himself."
+        cas "I think. That we shouldn't get back together."
+        show cas crying
+        cas "It hurts so, so bad to say that."
+        cas "I love him so much and I don't want this to be how things end."
+        cas "But he's getting worse and there's nothing I can do to help him. Not like this."
+        show cas sad
+        "Casper looked down, ashamed."
+        cas "And I don't like the person I've been becoming these past few months. I don't want to be short with my boyfriend, or ghost my best friend, or drop my hobbies and interests."
+        "Cas lowered his voice and asked, tentatively."
+        cas "Does that make me a bad person? That I can't keep doing this?"
+
+        if hugs:
+            "I held Casper tight against me."
+        mc "No, of course it doesn't."
+        
+        cas "Do you think that I'm making the right call?"
+        menu:
+            "\"I think so.\"":
+                show mc neutral
+                mc "From everything you've told me tonight... Yeah."
+                mc "It doesn't sound like being together with Taylor is good for either of you any more."
+            "\"I really don't think that it's my decision.\"":
+                show mc sad smile
+                mc "I really don't know Taylor that well, and I'm not in your head. I don't have all the details, or all the answers."
+                mc "But I can see how much this is hurting you and I trust you to make the right decision for yourself."
+                mc "And if you think that letting the relationship end here is the best thing for you, I fully support you."
+
+
     "The End"
     return
