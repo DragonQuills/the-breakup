@@ -90,6 +90,7 @@ label start:
         "I trudged up the stairs towards my apartment grumpily."
         "Today had been a long day and I was more than ready for bed."
         "Work had run late by almost 3 hours, I had somehow got caught in traffic despite the time, and the take-out I ordered was cold by the time I picked it up."
+        "Thank goodness it was finally the weekend and I could sleep in!"
         "I got out my phone and shot off a text to Casper."
         
         phone "Just got home. Let's hang out soon? It feels like it's been forever."
@@ -697,6 +698,7 @@ label start:
         show mc smile
         mc "I'm really glad. I hoped it would."
         # TODO: Maybe add some more deets here?
+        play music "audio/GuitarOnTheWater.ogg" fadeout 1 fadein 1
         show cas sad
         cas "Although... something else happened while you were out of the room."
         show mc sad
@@ -789,7 +791,81 @@ label start:
                 mc "I really don't know Taylor that well, and I'm not in your head. I don't have all the details, or all the answers."
                 mc "But I can see how much this is hurting you and I trust you to make the right decision for yourself."
                 mc "And if you think that letting the relationship end here is the best thing for you, I fully support you."
+        
+        "Cas gave a small nod, and then yawned widely."
+        cas "I think... I think I'm going to wait until morning to respond to him anyway."
 
+        play music "audio/EvansFull.ogg" fadein 1 fadeout 1
+        show mc smile
+        "Casper's wide yawn made me yawn as well."
+        mc "That might be a good idea."
+        show cas smile
+        cas "Now that I've calmed down I feel like I'm going to fall asleep any minute."
+        mc "Do you want me to head out so you can sleep?"
+
+        show cas sad
+        show mc blank
+        if hugs:
+            "Casper clutched my hand and shook his head."
+        else:
+            "Casper firmly shook his head."
+        
+        cas "Can you stay, still? I'm more ok now, but I still don't want to be here alone."
+        cas "And it's really, really late. I don't want you to drive when you're this tired."
+
+        show mc neutral
+        mc "Alright."
+
+        menu:
+            "\"Would you like me to sleep here with you?\"":
+                jump in_bed
+            "\"I'll head to the couch then.\"":
+                jump on_couch
+        
+        label in_bed:
+            show cas sad smile
+            cas "That would be nice, if you're ok with it."
+            show mc smile
+            mc "I am."
+
+            show cas blank
+            show mc neutral
+            "Casper shimmied down under the covers and I joined him."
+            "I felt my eyes growing heavier by the second."
+
+            menu:
+                "Stay awake until Casper falls asleep.":
+                    show cas neutral
+                    "I tapped my cheeks a few times to wake myself up. Casper looked at me quizzically through half closed eyes."
+                    cas "Hmm?"
+                    mc "I want to make sure you go to sleep ok before I fall asleep."
+                    show cas smile
+                    cas "Thank you."
+                    "Within a few minutes I heard Casper's breathing change to the slow, rhythmic breaths of sleep."
+                "Drift off.":
+                    pass
+            show mc smile
+            "I let myself slip into a heavy sleep."
+            "Casper woke me by stirring a few times during the night, but he went back to sleep quickly when he saw me beside him."
+            jump the_aftermath
+
+        label on_couch:
+            show cas neutral
+            mc "I'll head to the couch then. Could I have a pillow and blanket?"
+            show cas smile
+            cas "Of course!"
+            "Casper got me a blanket and pillow from his closet, then curled up in bed."
+            mc "Night Casper. Wake me up if you need me?"
+            cas "Mhm... I will..."
+            "Cas was already nodding off."
+
+            scene bg living room dark with Dissolve(1)
+            show mc smile with moveinleft
+            "I went to the couch and made myself comfortable. I was asleep mere moments after laying down."
+            jump the_aftermath
+    
+    label the_aftermath:
+        "I woke up feeling groggy."
 
     "The End"
     return
