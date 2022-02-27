@@ -9,5 +9,13 @@ You and Casper have known each other since middle school. You know him better th
 
 [Backgrounds by NoranekoGames](https://noranekogames.itch.io/yumebackground)
 
+### Music
+All music used was composed by [Tim Reichert](https://soundcloud.com/fulminisictus) and licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-nc/4.0/legalcode). [The songs can be found here](https://fulminisictus.itch.io/visual-novel-audio-pack). No changes were made. Songs used are:
+- Death
+- Evans Full
+- Guitar on the Water
+- Relax
+- Splatters
+
 ## License
 This game is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-nc/4.0/legalcode). The full text of the license can be found at the provided link, or in this repository. [A more succinct explanation of the license can be found here.](https://creativecommons.org/licenses/by-nc-sa/4.0/)

@@ -84,6 +84,7 @@ label start:
     label intro:
         scene bg stairs:
             zoom 0.7
+        play music "audio/Relax.ogg"
 
         show mc annoyed
         "I trudged up the stairs towards my apartment grumpily."
@@ -113,6 +114,7 @@ label start:
         "I looked at the caller ID - Casper. This had to have been the first time he had called me in two or three months."
         "I hurriedly picked up and pressed the phone to my ear."
 
+        play music "audio/Splatters.ogg" fadeout 1 fadein 1
         mc "Hello? Cas?"
         cas "..."
         mc "Casper? Are you there? Are you ok?"
@@ -202,6 +204,8 @@ label start:
 
     label in_the_apartment:
         scene bg doorway dark
+        play music "audio/GuitarOnTheWater.ogg" fadeout 1 fadein 1
+
         show cas sad smile
         with Dissolve(1)
         cas "Hey. Thank you for coming."
@@ -412,6 +416,7 @@ label start:
             zoom 0.8
         show mc neutral at left
         show cas neutral at right
+        with Dissolve(1)
         "We went into Casper's room together and sat down on the bed."
         menu:
             "Invite Casper to put his head on your lap.":
@@ -442,6 +447,7 @@ label start:
 
         show cas blank
         show mc blank
+        play music "audio/Death.ogg" fadeout 1 fadein 1
         cas "Do you remember how, in health class during middle school, I covered my ears during the sex portions a lot?"
         "I nodded. Casper had been very uncomfortable with anything related to sex. Even when the teacher had asked him not to, or the other kids teased him about it, he had continued covering his ears or putting headphones on when he got overwhelmed."
         "I hadn't really understood why at the time, just that he was unhappy. I teased him about it the first day, but he burst into tears."
@@ -472,6 +478,7 @@ label start:
         show cas sad smile
         cas "I avoided having sex as long as I could with Taylor. I told him I wanted to take things slow but... I was really scared."
         cas "I love kissing and cuddling and sometimes even making out, but that's where it ends for me."
+
         "Cas started speaking faster, stumbling over his words."
         if on_lap:
             "I squeezed his shoulder gently and his pace slowed, just a bit."
@@ -571,10 +578,10 @@ label start:
         show mc grin
         mc "Good job, you're doing great."
         show mc neutral
-        mc "Can you list four things you can hear."
+        mc "Can you list four things you can hear?"
         cas "Yeah. There's the air conditioner running. And I think I can hear a car going by outside."
 
-        "We continued this way, naming things Cas could see, hear, feel, smell, and taste until his breath had come back to normal."
+        "We continued this way, counting down things Cas could see, hear, feel, smell, and taste until his breath had come back to normal."
         if on_lap:
             "The whole time, I ran my fingers through his hair, hoping to provide some comfort."
         "Eventually, after Cas had calmed back down, I decided to broach the topic of his sex aversion."
@@ -582,6 +589,7 @@ label start:
     label ur_ace_bro:
         # TODO: add the other term here
         show mc neutral
+        play music "audio/EvansFull.ogg" fadein 1 fadeout 1
         mc "Have you heard the term asexual?"
         if still_crying:
             "Cas startled a little and looked confused. He blinked several times as his eyes strained to focus."
@@ -667,8 +675,11 @@ label start:
             jump dang_im_ace
     
     label dang_im_ace:
-        scene bg bedroom dark with Dissolve(1):
+        scene bg bedroom dark:
             zoom 0.7
+        with Dissolve(1)
+        # play music "audio/EvansFull.ogg" fadein 1 fadeout 1
+
         show cas blank at right
         show mc neutral at left
         "When I came back into the room, it was dark. Casper must have turned the lights off while I was away."
