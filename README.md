@@ -8,3 +8,6 @@ You and Casper have known each other since middle school. You know him better th
 [Character Sprites by Sutemo](https://sutemo.itch.io/male-character-sprite-for-visual-novel)
 
 [Backgrounds by NoranekoGames](https://noranekogames.itch.io/yumebackground)
+
+## License
+This game is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-nc/4.0/legalcode). The full text of the license can be found at the provided link, or in this repository. [A more succinct explanation of the license can be found here.](https://creativecommons.org/licenses/by-nc-sa/4.0/)
