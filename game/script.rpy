@@ -4,7 +4,7 @@
 
 define cas = Character("Casper", color = "#38b95f")
 define mc = Character("[name]", image = "mc",  color = "#227cf1")
-define phone = Character("Text",  color = "#994f4f")
+define phone = Character("Text Message",  color = "#994f4f")
 
 
 ################################################################################
@@ -71,7 +71,7 @@ label start:
                     "Taylor was jealous and suspicious, and very codependent. Casper was bitter and short tempered due to his frustration with Taylor's behavior."
                     "There was not physical, sexual, or verbal abuse, but there were some elements of emotional manipulation."
                     "By the beginning of the game, the relationship has already ended and Casper is dealing with his emotions around it."
-                    "Casper will not resume his relationship with Taylor, however you have a role in deciding if he stays in contact with Taylor."
+                    "Casper will not resume his relationship with Taylor regardless of your choices throughout the game."
                 "Nah, I'm good.":
                     $ show_warnings = False
         "Please remember to take care of yourself. Take breaks or stop playing if you need to!"
@@ -89,14 +89,14 @@ label start:
         show mc annoyed
         "I trudged up the stairs towards my apartment grumpily."
         "Today had been a long day and I was more than ready for bed."
-        "Work had run late by almost 3 hours, I had somehow got caught in traffic despite the time, and the take-out I ordered was cold by the time I picked it up."
+        "Work had run late by almost three hours, I had somehow got caught in traffic despite the time, and the take-out I ordered was cold by the time I picked it up."
         "Thank goodness it was finally the weekend and I could sleep in!"
         "I got out my phone and shot off a text to Casper."
         
         phone "Just got home. Let's hang out soon? It feels like it's been forever."
 
         show mc blank
-        "I sighed and tucked my phone back into my pocket, not expecting a reply until tomorrow at the earliest."
+        "I sighed and tucked my phone back into my pocket, not expecting a reply for at least a few days."
         "Casper and I had been best friends since middle-school. Though the friendship had evolved over the years, we were still as close as when we were kids."
         
         show mc sad
@@ -106,7 +106,8 @@ label start:
         "On top of that, he just felt... off to me."
         "I couldn't put my finger on what, but I had known him since before he lost his baby teeth. We had been together through graduating high school, our first jobs, his Dad's death, and his discovery of his trans identity and subsequent transition."
         "If something felt off to me, I trusted that there really was something wrong."
-        "But every time I asked, Casper brushed me off and told me he was fine. He always gave some excuse - I'm just tired, I forgot to eat breakfast, work was hard today. But I knew there was something deeper going on."
+        "But every time I asked, Casper brushed me off and told me he was fine. He always gave some excuse - I'm just tired, I forgot to eat breakfast, work was hard today."
+        "But I knew there was something deeper going on."
         "It was odd for him to be concealing something like this, but I figured he had his reasons."
         "I would just continue to do what I always had - check in, remind him I'm here, and give him space to work things out and tell me in his own time."
 
@@ -125,10 +126,8 @@ label start:
         
         menu:
             "\"Tell me what happened.\"":
-                $ q = "Tell me what happened."
                 jump what_happened
             "\"Tell me what's wrong.\"":
-                $ q = "Tell me what's wrong."
                 jump what_happened
             "\"Tell me how I can help.\"":
                 $ know_broke_up = False
@@ -136,12 +135,10 @@ label start:
         
         label what_happened:
             $ know_broke_up = True
-            mc "[q]"
             "I hear a few seconds of ragged breathing."
             cas "I...{w} Taylor...{w} we...{w} he..."
-            show mc grumpy
-            mc "Did he hurt you?"
-            cas "No!{w} No, no, he... he wouldn't."
+            show mc blank
+            mc "I'm here."
             cas "He... broke up with me. {w} Like, just now. He... he just left."
 
             show mc sad
@@ -167,7 +164,7 @@ label start:
         if not know_broke_up:
             "I didn't know what was happening but that wasn't important right now."
         "I needed to get to Casper as soon as I could. I trusted him when he said he would be ok until I arrived, but my heart still ached at how raw his voice was."
-        "I drove as fast as I could safely go. Casper's apartment was 40 minutes away normally, but the lack of cars on the road plus gratuitous speeding meant I made the trip in 30."
+        "I drove as fast as I could safely go. Casper's apartment was forty minutes away normally, but the lack of cars on the road plus gratuitous speeding meant I made the trip in thirty."
 
         scene bg outside apt
         "When I arrived at Casper's apartment complex, I took the stairs two at a time. I knew the way to his apartment better than the way to my parent's house at this point, so the complex was easy to navigate despite the dark."
@@ -212,9 +209,9 @@ label start:
         cas "Hey. Thank you for coming."
         mc "Of course."
         
-        "Cas reached behind himself and flipped a light switch."
         scene bg doorway
         show cas sad smile
+        "Cas flipped a light switch by the door."
         cas "Heh. I guess I didn't realize how dark it had gotten."
 
         show cas neutral at right
@@ -300,8 +297,8 @@ label start:
             cas "More fighting, more uncomfortable quiet, more nights going to sleep hurt or angry."
             cas "I... didn't want to tell you about it. I didn't want you to think badly of him, or of me."
 
-            "Cas met my eyes with intensity."
             show cas grumpy
+            "Cas met my eyes with intensity."
             cas "He's... he's not a bad person. He's just been through a lot and sometimes... I think sometimes it just gets to be too much for him and he lashes out."
             show cas sad
             cas "Or I do or say the wrong thing and he just goes cold."
@@ -311,7 +308,7 @@ label start:
             "Cas's body started shaking."
 
             menu:
-                "Hug him":
+                "Hug him.":
                     "I wrapped my arms around Cas and squeezed tightly."
                     "He gave a little squeeze back and rested his head on my shoulder."
                     cas "Thanks..."
@@ -331,23 +328,24 @@ label start:
             cas "Maybe things would have gone differently tonight if I had."
             
             menu:
-                "Hold his hand":
+                "Hold his hand.":
                     "I reached out and took Casper's hand, giving it a firm squeeze."
                     show mc sad smile
                     mc "Talk about whatever you need to. I'll listen."
                     show cas sad smile
-                    "Cas wraps his fingers around mine."
+                    "Cas wrapped his fingers around mine."
                     cas "Ok. Thank you."
                     $ holding_hands = True
-                "Stay quiet":
+                "Stay quiet.":
                     "I give a small nod to show I'm listening."
                     $ holding_hands = False
             
-            show cas sad smile
+            show cas sad
             show mc sad
             cas "Taylor's last relationship was really bad. {w}Like {i}really{/i} bad."
             cas "It's not my place to talk about what happened."
             cas "But because of it, Taylor's always been really insecure."
+            show cas sad smile
             cas "At first, I thought it was just a normal relationship thing. It wasn't like it was bad, he just wanted me to reassure him that I loved him pretty often."
             cas "And I was happy to remind him that because of course I care about him, and I want him to know it."
             show cas sad
@@ -359,7 +357,7 @@ label start:
             "Cas swallows hard."
             show cas crying smile
             cas "It. It sounds so bad when I say it like that, huh?"
-            cas "He never asked me to avoid you or anything like that I just didn't want to hurt him. But I guess I did anyway, huh?"
+            cas "He never asked me to avoid you or anything, I just didn't want to hurt him. But I guess I did anyway, huh?"
             if holding_hands:
                 "I gave Casper's hand what I hoped was a comforting squeeze, and he squeezed back."
             show cas sad
@@ -369,8 +367,8 @@ label start:
             cas "It, it just got so frustrating!"
             cas "I kept telling him I cared and that I only had eyes for him but he just wouldn't believe me."
             cas "And he kept questioning who I was with and where I went."
-            "His voice returned to a whisper."
             show cas sad
+            "His voice returned to a whisper."
             cas "I know he was just scared, but I just got so tired of having to constantly explain myself and walk on eggshells around him."
             cas "And I barely had time or energy for anything else. I haven't gone running in almost a month. I've barely even cooked recently."
             cas "So I guess I started getting short with him, and took longer and longer to text him back. But of course that just made everything worse."
@@ -394,7 +392,7 @@ label start:
                     "I tried cracking a joke to see how it would land."
                     mc "I'm pretty sure the two of us could take down..."
                     "I looked Casper up and down."
-                    mc "Like at least 3 and a half bears."
+                    mc "Like at least three and a half bears."
                     show cas laugh
                     "That was absurd enough to startle a laugh out of Casper."
                     cas "Haha!"
@@ -402,6 +400,8 @@ label start:
                     cas "A walk sounds good."
                     jump walk
                 "Do you want to watch a show?":
+                    show cas sad smile
+                    cas "Sure. That sounds like a good distraction."
                     jump tv
     # TODO: Add more conversation about your relationship with Casper, or his relationship with Taylor here.
     label walk:
@@ -427,8 +427,8 @@ label start:
                 mc "Do you want to rest your head on my legs?"
                 "Casper thought for a moment."
                 cas "Yeah. That would be really nice, actually."
-                "Casper curled up on his side and lay his head down on my lap, facing upwards."
-                "I stroked his hair gently."
+                "Casper lay down on his back and set his head down on my lap."
+                "He looked up at me and I stroked his hair gently."
                 show cas smile
                 cas "Thank you."
             "Just sit together.":
@@ -448,7 +448,7 @@ label start:
 
         show cas blank
         show mc blank
-        play music "audio/Death.ogg" fadeout 1 fadein 1
+        play music "audio/Death.ogg" fadeout 1 volume 2
         cas "Do you remember how, in health class during middle school, I covered my ears during the sex portions a lot?"
         "I nodded. Casper had been very uncomfortable with anything related to sex. Even when the teacher had asked him not to, or the other kids teased him about it, he had continued covering his ears or putting headphones on when he got overwhelmed."
         "I hadn't really understood why at the time, just that he was unhappy. I teased him about it the first day, but he burst into tears."
@@ -468,7 +468,7 @@ label start:
         show cas smile
         cas "I'm glad you never talked about that kind of thing with me."
         show mc grin
-        mc "Pft, of course not. There are way more interesting things to talk about than sex-ploits, especially since neither of us were even in relationships. I'm sure at least two thirds of those guys were lying anyway."
+        mc "Pft, of course not. There are way more interesting things to talk about than sex, especially since neither of us were even in relationships. I'm sure at least two thirds of those guys were lying anyway."
         cas "Yeah, probably."
         "Thinking back to high school, I had never realized that Casper was uncomfortable with the sexual nature of the conversations the guys were having, and not just how awful they were to women."
         "A suspicion started forming in my mind, but I kept it to myself for now. I could bring it up later."
@@ -500,7 +500,7 @@ label start:
         cas "He. He accused me of sleeping with someone else."
         show mc angry
         "Before I fully thought it through, I blurted out-"
-        mc "That's ridiculous! Cas, you've never cheated on anything in your life! You barely even lie!"
+        mc "That's ridiculous! Cas, you've never even cheated on an assignment! Your Dad had to explain the concept of white lies to you!"
         show cas sad smile
         cas "I know. But Taylor didn't believe me."
         show cas crying
@@ -586,6 +586,8 @@ label start:
         if on_lap:
             "The whole time, I ran my fingers through his hair, hoping to provide some comfort."
         "Eventually, after Cas had calmed back down, I decided to broach the topic of his sex aversion."
+        mc "Hey Cas?"
+        cas "Yeah?"
         
     label ur_ace_bro:
         # TODO: add the other term here
@@ -607,13 +609,13 @@ label start:
         mc "There's a spectrum of course, but right now we don't need to go into that."
         mc "What's important is that some asexual people are also sex-repulsed, which means they're disgusted or uncomfortable with the idea of having sex with someone."
         "I paused again as Cas stared up at me, understanding not quite dawning on him yet."
-        mc "I think that there's a pretty go chance that you're asexual, and it sounds like you're sex-repulsed too."
+        mc "I think that there's a pretty good chance that you're asexual, and it sounds like you're sex-repulsed too."
         
         if still_crying:
             "Casper sniffed hard and wiped his eyes."
 
         cas "There's... there's a word for that kind of thing?"
-        "I nodded several time firmly."
+        "I nodded several times firmly."
         mc "Yeah, and there are a lot of other people who feel like you've been describing."
         show cas surprised
         "Cas's eyes widened."
@@ -642,30 +644,30 @@ label start:
         show cas sad smile
         show mc sad
         cas "I'm just gonna... Think for a bit, ok?"
-        menu:
-            "Offer to get some food and give Cas some space.":
-                jump get_food
-            "Offer to sit with him while he thinks.":
-                mc "Do you want me to sit here with you for a bit?"
-                "Cas shrugged."
-                cas "Ok. I'm just going to be in my own head for a while though. Might do a little reading about asexual people on my phone."
-                jump sit_with_cas
+        # menu:
+        #     "Offer to get some food and give Cas some space.":
+        #         jump get_food
+        #     "Offer to sit with him while he thinks.":
+        mc "Do you want me to sit here with you while you do?"
+        "Cas shrugged."
+        cas "Ok. I'm just going to be in my own head for a while though. Might do a little reading about asexual people on my phone."
+        jump sit_with_cas
                 
 
-        label get_food:
-            mc "I could order us some take-out if you want a little space."
-            cas "That... would actually be great. Geez, what time even is it?"
-            "I checked the clock."
-            show mc sad smile
-            mc "It's a little after three AM."
-            cas "Oof. I don't think I've eaten since this time in the afternoon."
-            mc "Oof indeed. Pizza?"
-            show cas neutral
-            cas "Pizza sounds good."
-            scene black with Dissolve(1)
-            # TODO: flesh this out with MC getting some pizza and thinking about signs casper was ace or smtg
-            "I drove out to get us a pizza, then came back."
-            jump dang_im_ace
+        # label get_food:
+        #     mc "I could order us some take-out if you want a little space."
+        #     cas "That... would actually be great. Geez, what time even is it?"
+        #     "I checked the clock."
+        #     show mc sad smile
+        #     mc "It's a little after three AM."
+        #     cas "Oof. I don't think I've eaten since this time in the afternoon."
+        #     mc "Oof indeed. Pizza?"
+        #     show cas neutral
+        #     cas "Pizza sounds good."
+        #     scene black with Dissolve(1)
+        #     # TODO: flesh this out with MC getting some pizza and thinking about signs casper was ace or smtg
+        #     "I drove out to get us a pizza, then came back."
+        #     jump dang_im_ace
 
         label sit_with_cas:
             scene black with Dissolve(1)
@@ -679,7 +681,6 @@ label start:
         scene bg bedroom dark:
             zoom 0.7
         with Dissolve(1)
-        # play music "audio/EvansFull.ogg" fadein 1 fadeout 1
 
         show cas blank at right
         show mc neutral at left
@@ -716,8 +717,8 @@ label start:
             "Angry that he was blaming Casper.":
                 show mc angry
                 "What kind of apology was that?"
-                "The text read like Taylor thought that his yelling at Casper was Casper's fault."
-                "It wasn't fair of him to message Casper just a few hours after breaking their relationship off just to get Casper back!"
+                "The text read like Taylor thought that his emotional reaction was Casper's fault."
+                "It wasn't fair of him to message Casper just a few hours after breaking off their relationship just to get Casper back!"
             "Astonished that he was trying to brush this off.":
                 show mc surprised
                 "The text was just so weird. It was a backhanded apology, an accusation, and emotional manipulation all in one."
@@ -725,8 +726,8 @@ label start:
             "Honestly, I felt kind of bad for him.":
                 show mc sad
                 $ sympathy = True
-                "Taylor clearly had a lot of fear around losing Casper, and he was dealing with it in the worse ways."
-                "From what Casper had said, Taylor seemed like he really needed help, and I hoped he got it, ideally from a therapist and not a romantic partner."
+                "Taylor clearly had a lot of fear around losing Casper, and he was dealing with it in the worst ways."
+                "From what Casper had said, Taylor seemed like he really needed help, and I hoped he got it, ideally from a therapist and not solely a romantic partner."
                 "But it absolutely didn't make how he was treating Casper ok, and this text had a manipulative feeling to it that made me very uncomfortable."
         
         cas "Does... does the text feel kind of weird to you too...?"
@@ -803,7 +804,7 @@ label start:
         mc "That might be a good idea."
         show cas smile
         cas "Now that I've calmed down I feel like I'm going to fall asleep any minute."
-        mc "Do you want me to head out so you can sleep?"
+        mc "Do you want me to go home so you can sleep?"
 
         show cas sad
         show mc blank
@@ -842,7 +843,7 @@ label start:
                     show cas neutral
                     "I tapped my cheeks a few times to wake myself up. Casper looked at me quizzically through half closed eyes."
                     cas "Hmm?"
-                    mc "I want to make sure you go to sleep ok before I fall asleep."
+                    mc "I want to make sure you fall asleep before I do."
                     show cas smile
                     cas "Thank you."
                     "Within a few minutes I heard Casper's breathing change to the slow, rhythmic breaths of sleep."
@@ -961,14 +962,14 @@ label start:
         "Casper also kept to his word- It became much easier to get ahold of him and we started seeing each other more regularly."
         "After a few weeks, Casper received word from Taylor."
         "Fortunately, it wasn't to try to get back together, but instead to let Casper know that he was starting therapy."
-        "Taylor realized that he had been pushing Casper away and avoiding getting help with the core issues at play."
+        "Taylor realized that he had been both pushing Casper away and avoiding getting help because of the core issues at play."
 
         if sympathy:
             "I hoped therapy helped him heal and grow."
         else:
             "I was glad he recognized that he needed help, and glad that he hadn't tried to get Casper back."
 
-        "As for Casper and me, well, I'm not sure where what exactly we'll be doing in another few months or years."
-        "But he's the best friend I've ever had, and I certainly can't see that much even changing."
+        "As for me and Casper, well, I'm not sure what exactly we'll be doing in another few months or years."
+        "But he's the best friend I've ever had, and I certainly can't see that changing."
     "The End"
     return
