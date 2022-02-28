@@ -55,7 +55,7 @@ label start:
     label warnings:
         hide mc
         
-        "This game contains themes of aphobia and toxic relationships, but the game has a happy ending. It's kind of a rough read though, not gonna lie."
+        "This game contains themes of aphobia and toxic relationships, but the game has a happy ending."
         "It has a lot of grief processing, but your character is there to help."
         $ show_warnings = True
         while show_warnings:
@@ -710,6 +710,7 @@ label start:
         phone "I'm so sorry, babe. I should never have said that. You just make me so scared and insecure sometimes. Are we ok? Please please please say yes."
         show cas blank
         "Casper watched me, gauging my reaction."
+        $ sympathy = False
         menu:
             "I felt..."
             "Angry that he was blaming Casper.":
@@ -723,6 +724,7 @@ label start:
                 "How could he have yelled at Casper like that, walked out, and then texted only a few hours later hoping things were fine?"
             "Honestly, I felt kind of bad for him.":
                 show mc sad
+                $ sympathy = True
                 "Taylor clearly had a lot of fear around losing Casper, and he was dealing with it in the worse ways."
                 "From what Casper had said, Taylor seemed like he really needed help, and I hoped he got it, ideally from a therapist and not a romantic partner."
                 "But it absolutely didn't make how he was treating Casper ok, and this text had a manipulative feeling to it that made me very uncomfortable."
@@ -818,8 +820,10 @@ label start:
 
         menu:
             "\"Would you like me to sleep here with you?\"":
+                $ in_bed = True
                 jump in_bed
             "\"I'll head to the couch then.\"":
+                $ in_bed = False
                 jump on_couch
         
         label in_bed:
@@ -847,6 +851,7 @@ label start:
             show mc smile
             "I let myself slip into a heavy sleep."
             "Casper woke me by stirring a few times during the night, but he went back to sleep quickly when he saw me beside him."
+
             jump the_aftermath
 
         label on_couch:
@@ -862,10 +867,108 @@ label start:
             scene bg living room dark with Dissolve(1)
             show mc smile with moveinleft
             "I went to the couch and made myself comfortable. I was asleep mere moments after laying down."
+            
             jump the_aftermath
     
     label the_aftermath:
-        "I woke up feeling groggy."
+        play music "audio/Relax.ogg" fadein 1 fadeout 1
+        if in_bed:
+            scene bg bedroom morning:
+                zoom 0.7
+            show cas neutral at right
+            show mc blank at left
+            with Dissolve(1)
 
+            "I woke up from the afternoon light streaming in the window, feeling groggy."
+            "Casper was sitting next to me and seemed half awake. He was reading a book and blinking drearily."
+            "He looked over at me, presumably hearing me stir."
+        
+        else:
+            scene bg living room morning
+            show mc blank
+            with Dissolve(1)
+
+            "I woke up from the afternoon light streaming in the window, feeling groggy. I sat up and rubbed my eyes as I tried to wake up."
+            
+            scene bg living room morning
+            show mc blank at right
+            show cas smile at left
+            with moveinleft
+
+            "Casper came in from the bedroom, looking about as tired as I felt. He smiled when he saw me and came to sit down."
+
+        show cas grin
+        cas "G'morning. You've got some serious bedhead."
+        show mc smile
+        mc "What time is it? I feel like I slept for a month."
+        "Cas laughed, a welcome sound after last night."
+        cas "We might as well have. It's one in the afternoon."
+        show cas surprised
+        cas "Wait, you didn't have anything you needed to do today, did you?"
+        "I shook my head."
+        mc "Nothing time-sensitive. I should probably take care of some laundry and grocery shopping sometime today, but that's about it."
+        
+        show cas neutral
+        cas "Oh good."
+        cas "Thank you so much for coming over last night. Everything feels a lot more manageable this morning, and most of that is because of you."
+        mc "Anytime Cas. Thank you for letting me know you needed me."
+
+        show cas sad smile
+        cas "I really wish I could treat you to breakfast, but..."
+        cas "Taylor's been texting me this morning and I think I want to call him to talk. And I'd rather have a bit of space to do that."
+
+        show mc sad
+        mc "Are you sure you're up for it?"
+        cas "Not... entirely. But I don't want to put this off. And Taylor's... kind of freaking out. I don't want to just ghost him."
+        cas "It's going to be a really hard conversation, to tell him that we're not getting back together. But I know it needs to happen."
+
+        show cas smile
+        cas "Can I take you out to dinner next week, or breakfast next weekend? I've missed seeing you a lot."
+        show mc grin
+        mc "I would love that."
+        show cas blank
+        "I heard Casper's phone buzz in his pocket and he grimaced."
+
+        show mc sad smile
+        mc "I'll head out then? If you're sure you'll be ok?"
+        show cas neutral
+        "Casper gave an assured nod."
+        cas "I'll call you if things really go sideways. But I think I'll be ok. And besides, I need some alone time to process everything anyways."
+
+        scene bg doorway
+        show cas neutral at right
+        show mc smile at left
+        with Dissolve(1)
+
+        "Casper walked me to the door."
+
+        menu:
+            "Give him a hug.":
+                "I wrapped my arms firmly around my best friend and squeezed."
+                "Casper hugged me back tightly for a few seconds before letting me go."
+            "Wave.":
+                "I gave a little wave and Casper waved back."
+        
+        cas "I'll see you soon, ok? I promise. No more avoiding your calls or texts."
+        show mc grin
+        mc "I'll count on it. See you later, Casper!"
+        cas "Bye, [name]. And thanks again."
+        "With that, I walked away, hearing Casper shut the door behind me."
+
+        scene black with Dissolve(1)
+        "A day passed before Casper messaged me again."
+        "The conversation with Taylor had gone about as well as could be expected. Taylor was very upset, but Casper held firm on his decision to end the relationship."
+        "Casper also kept to his word- It became much easier to get ahold of him and we started seeing each other more regularly."
+        "After a few weeks, Casper received word from Taylor."
+        "Fortunately, it wasn't to try to get back together, but instead to let Casper know that he was starting therapy."
+        "Taylor realized that he had been pushing Casper away and avoiding getting help with the core issues at play."
+
+        if sympathy:
+            "I hoped therapy helped him heal and grow."
+        else:
+            "I was glad he recognized that he needed help, and glad that he hadn't tried to get Casper back."
+
+        "As for Casper and me, well, I'm not sure where what exactly we'll be doing in another few months or years."
+        "But he's the best friend I've ever had, and I certainly can't see that much even changing."
     "The End"
     return
