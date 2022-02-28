@@ -448,7 +448,7 @@ label start:
 
         show cas blank
         show mc blank
-        play music "audio/Death.ogg" fadeout 1 volume 2
+        play music "audio/Death.ogg" fadeout 1
         cas "Do you remember how, in health class during middle school, I covered my ears during the sex portions a lot?"
         "I nodded. Casper had been very uncomfortable with anything related to sex. Even when the teacher had asked him not to, or the other kids teased him about it, he had continued covering his ears or putting headphones on when he got overwhelmed."
         "I hadn't really understood why at the time, just that he was unhappy. I teased him about it the first day, but he burst into tears."

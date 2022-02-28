@@ -30,6 +30,28 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+{b}Credits{/b}
+
+Artwork
+
+{a=https://sutemo.itch.io/male-character-sprite-for-visual-novel}Character Sprites by Sutemo{/a}
+
+{a=https://noranekogames.itch.io/yumebackground}Backgrounds by NoranekoGames{/a}
+
+
+Music
+
+All music used was composed by {a=https://soundcloud.com/fulminisictus}Tim Reichert{/a} and licensed under the {a=https://creativecommons.org/licenses/by-nc/4.0/legalcode}Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License{/a}. {a=https://fulminisictus.itch.io/visual-novel-audio-pack}The songs can be found here{/a}. No changes were made. Songs used are:
+
+- Death
+
+- Evans Full
+
+- Guitar on the Water
+
+- Relax
+
+- Splatters
 """)
 
 
